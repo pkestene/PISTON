@@ -433,20 +433,20 @@ void IsoRender::display()
       glColor3f(1.0, 1.0, 1.0);
       char line[256] = "";
 
-#if THRUST_DEVICE_BACKEND == THRUST_DEVICE_BACKEND_CUDA
+#if THRUST_DEVICE_SYSTEM == THRUST_DEVICE_SYSTEM_CUDA
       sprintf(line, "CUDA Backend");
 #endif
-#if THRUST_DEVICE_BACKEND == THRUST_DEVICE_BACKEND_OMP
+#if THRUST_DEVICE_SYSTEM == THRUST_DEVICE_SYSTEM_OMP
       sprintf(line, "OpenMP Backend");
 #endif
       glRasterPos2f(10.0, viewportHeight/8.0);
       for (int c=0; c<strlen(line); c++)
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, line[c]);
 
-/*#if THRUST_DEVICE_BACKEND == THRUST_DEVICE_BACKEND_CUDA
+/*#if THRUST_DEVICE_SYSTEM == THRUST_DEVICE_SYSTEM_CUDA
       sprintf(line, "Quadro 6000 GPU (448 cores)");
 #endif
-#if THRUST_DEVICE_BACKEND == THRUST_DEVICE_BACKEND_OMP
+#if THRUST_DEVICE_SYSTEM == THRUST_DEVICE_SYSTEM_OMP
       sprintf(line, "Intel Xeon 2.67 GHz CPU (12 cores)");
 #endif
       glRasterPos2f(10.0, viewportHeight/8.0-20);

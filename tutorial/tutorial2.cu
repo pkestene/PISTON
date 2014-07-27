@@ -66,7 +66,7 @@ This simulation is based on the method by Matt Sottile described here: http://sy
 #include <piston/choose_container.h>
 #include <piston/hsv_color_map.h>
 
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_space_tag
 using namespace piston;
 
 #include "flock_sim.h"

@@ -5,7 +5,7 @@ include(${VTK_USE_FILE})
 #target_link_libraries(cayley_timing_GPU pthread)
 
 #add_executable(cayley_timing_OMP cayley_timing.cpp)
-#set_target_properties(cayley_timing_OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+#set_target_properties(cayley_timing_OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 #target_link_libraries(cayley_timing_OMP pthread gomp)
 
 #cuda_add_executable(marching_cube marching_cube.cu)

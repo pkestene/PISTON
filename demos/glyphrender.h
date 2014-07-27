@@ -60,7 +60,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #include <piston/choose_container.h>
 
 using namespace piston;
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_system_tag
 
 template <typename ValueType>
 struct color_map : thrust::unary_function<ValueType, float4>

@@ -24,7 +24,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
 #include <piston/choose_container.h>
 
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_system_tag
 using namespace piston;
 
 #include <piston/implicit_function.h>

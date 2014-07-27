@@ -64,31 +64,31 @@ endif ()
 
 
 add_executable(tangleOMP glwindow.cpp ${ex_SOURCES} ${ex_HEADERS_MOC} ${ex_FORMS_HEADERS})
-set_target_properties(tangleOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTANGLE -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(tangleOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTANGLE -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(tangleOMP GLEW pthread gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(cutplaneOMP glwindow.cpp ${ex_SOURCES} ${ex_HEADERS_MOC} ${ex_FORMS_HEADERS})
-set_target_properties(cutplaneOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DCUTPLANE -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(cutplaneOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DCUTPLANE -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(cutplaneOMP GLEW pthread gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(thresholdOMP glwindow.cpp ${ex_SOURCES} ${ex_HEADERS_MOC} ${ex_FORMS_HEADERS})
-set_target_properties(thresholdOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRESHOLD -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(thresholdOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRESHOLD -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(thresholdOMP GLEW pthread gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(image3d_to_tetOMP image3d_to_tet.cpp)
-set_target_properties(image3d_to_tetOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRESHOLD -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(image3d_to_tetOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRESHOLD -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(image3d_to_tetOMP gomp pthread)
 
 add_executable(haloOMP halorender.cpp ${ex_SOURCES} ${ex_HEADERS_MOC} ${ex_FORMS_HEADERS})
-set_target_properties(haloOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DHALO -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP -DDATA_DIRECTORY=${DATA_DIR}")
+set_target_properties(haloOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DHALO -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP -DDATA_DIRECTORY=${DATA_DIR}")
 target_link_libraries(haloOMP GLEW pthread gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(haloMergeTreeOMP glwindowHalo.cpp ${halo_SOURCES} ${halo_HEADERS_MOC} ${halo_FORMS_HEADERS})
-set_target_properties(haloMergeTreeOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DHALO -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP -DDATA_DIRECTORY=${DATA_DIR}")
+set_target_properties(haloMergeTreeOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DHALO -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP -DDATA_DIRECTORY=${DATA_DIR}")
 target_link_libraries(haloMergeTreeOMP GLEW pthread gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(haloTestOMP halo.cpp)
-set_target_properties(haloTestOMP PROPERTIES COMPILE_FLAGS "-g -fopenmp -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP -DDATA_DIRECTORY=${DATA_DIR}")
+set_target_properties(haloTestOMP PROPERTIES COMPILE_FLAGS "-g -fopenmp -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP -DDATA_DIRECTORY=${DATA_DIR}")
 target_link_libraries(haloTestOMP pthread gomp)
 
 

@@ -32,8 +32,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
 using namespace piston;
 
-//#define SPACE thrust::host_space_tag
-#define SPACE thrust::detail::default_device_space_tag
+//#define SPACE thrust::host_system_tag
+#define SPACE thrust::device_system_tag
 
 template <typename Space>
 struct pointid_field : public image3d<Space>

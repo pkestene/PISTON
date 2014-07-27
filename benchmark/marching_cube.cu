@@ -13,8 +13,8 @@
 #include <piston/vtk_image3d.h>
 #include "piston/marching_cube.h"
 
-//#define SPACE thrust::host_space_tag
-#define SPACE thrust::detail::default_device_space_tag
+//#define SPACE thrust::host_system_tag
+#define SPACE thrust::device_system_tag
 
 using namespace piston;
 

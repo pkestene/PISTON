@@ -43,7 +43,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #include <piston/piston_math.h> 
 #include <piston/choose_container.h>
 
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_system_tag
 using namespace piston;
 
 #include <piston/halo_merge.h>   //wathsala

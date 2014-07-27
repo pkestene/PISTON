@@ -44,7 +44,7 @@ Authors: Ollie Lo and Christopher Sewell, ollie@lanl.gov and csewell@lanl.gov
 #include <piston/piston_math.h> 
 #include <piston/choose_container.h>
 
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_space_tag
 using namespace piston;
 
 #include <piston/implicit_function.h>

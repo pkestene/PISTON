@@ -32,7 +32,7 @@
 #include <piston/vtk_image3d.h>
 #include "vtkImageMandelbrotSource.h"
 
-#define SPACE thrust::host_space_tag
+#define SPACE thrust::host_system_tag
 using namespace piston;
 
 struct print_tuple

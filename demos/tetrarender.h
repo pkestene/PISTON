@@ -78,7 +78,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
 
 using namespace piston;
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_system_tag
 
 #include <piston/image3d.h>
 #include <piston/vtk_image3d.h>

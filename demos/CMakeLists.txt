@@ -37,7 +37,7 @@ if (USE_CUDA)
 endif ()
 
 add_executable(contourOMP contour.cpp isorender.cpp ${CMAKE_SOURCE_DIR}/piston/util/quaternion.cpp)
-set_target_properties(contourOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(contourOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(contourOMP pthread vtkIO GLEW gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 
 
@@ -53,7 +53,7 @@ if (USE_CUDA)
 endif ()
 
 add_executable(swdemoOMP isorender.cpp ${swdemo_SOURCES} ${swdemo_HEADERS_MOC} ${swdemo_FORMS_HEADERS}) 
-set_target_properties(swdemoOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(swdemoOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(swdemoOMP GLEW pthread vtkIO gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 
@@ -69,7 +69,7 @@ if (USE_CUDA)
 endif ()
 
 add_executable(demoOMP isorender.cpp ${demo_SOURCES} ${demo_HEADERS_MOC} ${demo_FORMS_HEADERS})
-set_target_properties(demoOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(demoOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(demoOMP GLEW pthread vtkIO gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 if (USE_CUDA)
@@ -109,20 +109,20 @@ if (USE_CUDA)
 endif ()
 
 add_executable(rendererOMP renderer.cpp rendererrender.cpp ${CMAKE_SOURCE_DIR}/piston/util/quaternion.cpp) 
-set_target_properties(rendererOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(rendererOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(rendererOMP pthread vtkIO vtkImaging vtkGraphics vtkHybrid gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 
 add_executable(tetraOMP tetra.cpp tetrarender.cpp ${CMAKE_SOURCE_DIR}/piston/util/quaternion.cpp) 
-set_target_properties(tetraOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(tetraOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(tetraOMP pthread vtkIO vtkImaging vtkGraphics vtkHybrid gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 
 add_executable(structuredtetraOMP structuredtetra.cpp structuredtetrarender.cpp ${CMAKE_SOURCE_DIR}/piston/util/quaternion.cpp) 
-set_target_properties(structuredtetraOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(structuredtetraOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDATA_DIRECTORY=${DATA_DIR} -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(structuredtetraOMP pthread vtkIO vtkImaging vtkGraphics vtkHybrid gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 
 if (USE_DISTRIBUTED)
   add_executable(dcontourOMP distributed.cpp distributedrender.cpp ${CMAKE_SOURCE_DIR}/piston/util/quaternion.cpp)
-  set_target_properties(dcontourOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDISTRIBUTED_PISTON -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+  set_target_properties(dcontourOMP PROPERTIES COMPILE_FLAGS "-fopenmp -DDISTRIBUTED_PISTON -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
   target_link_libraries(dcontourOMP pthread gomp mpi_cxx mpi ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 endif ()
 

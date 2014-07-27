@@ -1465,7 +1465,7 @@ public:
 							src->parent = n; 	des->parent = n;
 							src->sibling = des;
 						}
-						#if THRUST_DEVICE_BACKEND != THRUST_DEVICE_BACKEND_CUDA
+						#if THRUST_DEVICE_SYSTEM != THRUST_DEVICE_SYSTEM_CUDA
 						else
 							std::cout << "***no Free item .... this shouldnt happen*** " << cubeStart << " " << e.weight << " " << min_ll << " " << std::endl;
 						#endif

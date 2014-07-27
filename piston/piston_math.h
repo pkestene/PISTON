@@ -2,14 +2,13 @@
 #ifndef PISTON_MATH
 #define PISTON_MATH
 
-#if THRUST_DEVICE_BACKEND == THRUST_DEVICE_BACKEND_CUDA
+#include <thrust/detail/config.h>
+
+#if THRUST_DEVICE_SYSTEM == THRUST_DEVICE_SYSTEM_CUDA
 
 #include "cuda_runtime.h"
 
 #else
-
-#include <thrust/detail/config.h>
-
 
 typedef struct float3
 {
@@ -42,8 +41,8 @@ static __inline__ __host__ __device__ uint3 make_uint3(unsigned int x, unsigned 
   uint3 t; t.x = x; t.y = y; t.z = z; return t;
 }
 
-#endif
 
+#endif // THRUST_DEVICE_SYSTEM
 
 static __inline__ __host__ __device__ float3 make_float3(float4 a)
 {
@@ -208,4 +207,4 @@ inline __host__ __device__ float* matrixMul(float* a, float* b)
     return c;
 }
 
-#endif
+#endif //  PISTON_MATH

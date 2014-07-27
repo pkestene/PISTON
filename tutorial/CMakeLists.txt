@@ -36,15 +36,15 @@ if (USE_CUDA)
 endif ()
 
 add_executable(tutorial1OMP tutorial1.cpp ${tutorial_SOURCES} ${tutorial_HEADERS_MOC} ${tutorial_FORMS_HEADERS})
-set_target_properties(tutorial1OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(tutorial1OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(tutorial1OMP pthread gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(tutorial2OMP tutorial2.cpp ${tutorial_SOURCES} ${tutorial_HEADERS_MOC} ${tutorial_FORMS_HEADERS})
-set_target_properties(tutorial2OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(tutorial2OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(tutorial2OMP pthread vtkIO vtkRendering vtkFiltering vtkCommon vtkGraphics gomp ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${QT_LIBRARIES})
 
 add_executable(tutorial3OMP tutorial3.cpp)
-set_target_properties(tutorial3OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_BACKEND=THRUST_DEVICE_BACKEND_OMP")
+set_target_properties(tutorial3OMP PROPERTIES COMPILE_FLAGS "-fopenmp -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP")
 target_link_libraries(tutorial3OMP pthread gomp)
 
 

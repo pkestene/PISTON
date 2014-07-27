@@ -23,8 +23,8 @@
 #include <piston/cutil_math.h>
 #include <piston/image2d.h>
 
-//#define SPACE  thrust::host_space_tag
-#define SPACE thrust::detail::default_device_space_tag
+//#define SPACE  thrust::host_system_tag
+#define SPACE thrust::device_system_tag
 
 using namespace piston;
 static const int GRID_SIZE = 4;
@@ -250,8 +250,8 @@ int main(int argc, char** argv)
     g_vec.resize(g_mesh_width * g_mesh_height);
 
     // transform the mesh
-    thrust::counting_iterator<int,thrust::device_space_tag> first(0);
-    thrust::counting_iterator<int,thrust::device_space_tag> last(g_mesh_width * g_mesh_height);
+    thrust::counting_iterator<int,thrust::device_system_tag> first(0);
+    thrust::counting_iterator<int,thrust::device_system_tag> last(g_mesh_width * g_mesh_height);
 
     thrust::transform(first, last,
                       g_vec.begin(),

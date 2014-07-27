@@ -26,6 +26,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #define PLANE_FUNCTOR_H_
 
 #include <piston/implicit_function.h>
+#include <piston/piston_math.h>
 
 namespace piston
 {

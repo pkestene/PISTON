@@ -57,7 +57,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #include <piston/choose_container.h>
 
 using namespace piston;
-#define SPACE thrust::detail::default_device_space_tag
+#define SPACE thrust::device_system_tag
 
 #define BIG_CONTOUR_BUFFER_SIZE 25000000
 #define BIG_PLANE_BUFFER_SIZE 13000000

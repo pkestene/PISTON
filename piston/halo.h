@@ -4,6 +4,7 @@
 #include <thrust/copy.h>
 #include <thrust/scan.h>
 #include <thrust/fill.h>
+#include <thrust/gather.h>
 #include <thrust/tuple.h>
 #include <thrust/count.h>
 #include <thrust/replace.h>
